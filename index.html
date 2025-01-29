@@ -28,53 +28,140 @@
                 <li>Wheat and soybean futures have the most pronounced influence on volatility.</li>
             </ul>
         </section>
-        <section>
-            <h2>Interactive Visualization</h2>
-            <canvas id="foodPriceIndexChart" width="400" height="200"></canvas>
-            <script>
-                const ctx = document.getElementById('foodPriceIndexChart').getContext('2d');
-                const foodPriceIndexChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['2000', '2005', '2010', '2015', '2020'],
-                        datasets: [{
-                            label: 'Food Price Index (2000–2020)',
-                            data: [60, 75, 100, 85, 95],
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            tension: 0.3,
-                            fill: true
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: {
-                                display: true,
-                                position: 'top'
-                            }
-                        },
-                        scales: {
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: 'Year'
-                                }
-                            },
-                            y: {
-                                title: {
-                                    display: true,
-                                    text: 'Index Value'
-                                }
-                            }
-                        }
-                    }
-                });
-            </script>
-        </section>
+        
+        <table>
+            <caption>Table 1 - Definitions of Key Regression Variables</caption>
+            <thead>
+                <tr>
+                    <th>Variables</th>
+                    <th>Definitions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FS</td>
+                    <td>Food Security (Food security indicator from FAO considering price, income, accessibility, sufficiency, safety, and nutritional aspect of food security)</td>
+                </tr>
+                <tr>
+                    <td>FD</td>
+                    <td>Composite Agricultural Financialization Index constructed by combining the wheat, corn, and soybean financialization using Principal Component Analysis.</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Control Variables</strong></td>
+                </tr>
+                <tr>
+                    <td>gdpgr</td>
+                    <td>This variable represents the annual GDP growth rate.</td>
+                </tr>
+                <tr>
+                    <td>arbl</td>
+                    <td>This variable represents the total arable land of a country as a percentage of total land area.</td>
+                </tr>
+                <tr>
+                    <td>fpricein</td>
+                    <td>This variable represents the annual Food Price Index.</td>
+                </tr>
+                <tr>
+                    <td>infl</td>
+                    <td>This variable represents the annual consumer price inflation.</td>
+                </tr>
+                <tr>
+                    <td>energypri</td>
+                    <td>This variable represents the annual Energy Price Index.</td>
+                </tr>
+                <tr>
+                    <td>exchg</td>
+                    <td>This variable represents the average annual exchange rate of local currency against the US dollar.</td>
+                </tr>
+                <tr>
+                    <td>fprodin</td>
+                    <td>This variable represents the annual Food Production Index.</td>
+                </tr>
+                <tr>
+                    <td>lngdppc</td>
+                    <td>This variable represents the log of annual GDP per capita.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>Table 3 - Effect of Financialization on Food Security in Emerging Economies</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Food Security</th>
+                    <th>Coefficient</th>
+                    <th>Std. Error</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FD</td>
+                    <td>-0.1772***</td>
+                    <td>0.0423</td>
+                </tr>
+                <tr>
+                    <td>gdpgr</td>
+                    <td>0.0041</td>
+                    <td>0.0040</td>
+                </tr>
+                <tr>
+                    <td>arbl</td>
+                    <td>-0.0962***</td>
+                    <td>0.0164</td>
+                </tr>
+                <tr>
+                    <td>fpricein</td>
+                    <td>-0.0984***</td>
+                    <td>0.0015</td>
+                </tr>
+                <tr>
+                    <td>infl</td>
+                    <td>-0.0020</td>
+                    <td>0.0033</td>
+                </tr>
+                <tr>
+                    <td>energypri</td>
+                    <td>-0.0009*</td>
+                    <td>0.0005</td>
+                </tr>
+                <tr>
+                    <td>exchg</td>
+                    <td>0.0000***</td>
+                    <td>0.0000</td>
+                </tr>
+                <tr>
+                    <td>frpodin</td>
+                    <td>0.0080***</td>
+                    <td>0.0024</td>
+                </tr>
+                <tr>
+                    <td>lngdppc</td>
+                    <td>0.8000***</td>
+                    <td>0.0684</td>
+                </tr>
+                <tr>
+                    <td>Constant</td>
+                    <td>8.8268***</td>
+                    <td>0.8115</td>
+                </tr>
+                <tr>
+                    <td colspan="3">F Statistic = 22.02***</td>
+                </tr>
+                <tr>
+                    <td colspan="3">R² = 0.7407</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="notes">
+            Notes: *p < 0.1; **p < 0.05; ***p < 0.01
+        </div>
+
+
+
         <section>
             <h2>Full Paper</h2>
-            <a href="research-paper.pdf" class="highlight" download>Download PDF</a>
+            <a href="research paper.pdf" class="highlight" download>Download PDF</a>
         </section>
         <section>
             <h2>Contact</h2>
