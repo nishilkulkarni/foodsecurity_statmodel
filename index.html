@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Portfolio</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="name">Does the Financialization of Agricultural Commodities Impact Food Security?</h1>
+        <p class="papertitle">By Manogna R. L. and Nishil Kulkarni</p>
+    </header>
+    <main>
+        <section>
+            <h2>Abstract</h2>
+            <p>
+                The financialization of agricultural commodities has significant implications for food security. 
+                This study examines the impacts on developed and developing countries, focusing on wheat, maize, and soybeans.
+            </p>
+        </section>
+        <section>
+            <h2>Key Highlights</h2>
+            <ul>
+                <li><span class="highlight">Financialization</span> has a greater negative impact on developing nations.</li>
+                <li>Monetary policy moderates the effect of financialization on food security.</li>
+                <li>Wheat and soybean futures have the most pronounced influence on volatility.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Interactive Visualization</h2>
+            <canvas id="foodPriceIndexChart" width="400" height="200"></canvas>
+            <script>
+                const ctx = document.getElementById('foodPriceIndexChart').getContext('2d');
+                const foodPriceIndexChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2000', '2005', '2010', '2015', '2020'],
+                        datasets: [{
+                            label: 'Food Price Index (2000–2020)',
+                            data: [60, 75, 100, 85, 95],
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.3,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Year'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Index Value'
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
+        </section>
+        <section>
+            <h2>Full Paper</h2>
+            <a href="research-paper.pdf" class="highlight" download>Download PDF</a>
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:leshma2020@gmail.com">leshma2020@gmail.com</a></p>
+            <p>Email: <a href="mailto:nish140603@gmail.com">nish140603@gmail.com</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Manogna R. L. & Nishil Kulkarni. All rights reserved.</p>
+    </footer>
+</body>
+</html>
